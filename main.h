@@ -1,8 +1,23 @@
 #ifndef MAIN_H
 #define MAIN_H
+#define BUFFER 1024
+#define PARAMS_INIT {0, 0}
+#define BUF_FLUSH 0
 #include <stdlib.h>
 #include <stdarg.h>
 #include <stdio.h>
+typedef struct {
+	int l_m;
+	int h_m;
+} params_t;
+void itp(params_t *params, va_list args);
+int gf(char *format, params_t *params);
+char *gw(char *format, params_t *params, va_list args);
+char *gp(char *format, params_t *params, va_list args);
+int gm(char *format, params_t *params);
+int gs(char *format);
+int pft(char *start, char *end, int modifier);
+int gpf(char *format, va_list args, params_t *params);
 
 int printf_char(va_list val);
 int printf_string(va_list val);
