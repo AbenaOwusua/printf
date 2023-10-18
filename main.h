@@ -16,8 +16,8 @@ char *gw(char *format, params_t *params, va_list args);
 char *gp(char *format, params_t *params, va_list args);
 int gm(char *format, params_t *params);
 int gs(char *format);
-int pft(char *start, char *end, int modifier);
 int gpf(char *format, va_list args, params_t *params);
+int pft(char *start, int offset, int modifier);
 
 int printf_char(va_list val);
 int printf_string(va_list val);

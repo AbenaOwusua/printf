@@ -35,7 +35,9 @@ int _printf(const char *format, ...)
 		if (gm(a, &par))
 			a++;
 		if (!gs(a))
-			tTotal += pft(start, a, par.l_m || par.h_m ? a - 1 : 0);
+			tTotal += pft(start, (int)(a - start),
+              par.l_m || par.h_m ? (int)(a - start - 1) : 0);
+
 		else
 			tTotal += gpf(a, br, &par);
 	}
